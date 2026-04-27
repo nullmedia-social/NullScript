@@ -1,0 +1,87 @@
+~ test_loops.ns - conditionals, loops, ranges, try/catch
+
+~ if / else if / else
+var score=87 Integer
+
+if (score >= 90) {
+    println("A grade - nice work")
+} else if (score >= 80) {
+    println("B grade - pretty good")
+} else if (score >= 70) {
+    println("C grade - could be better")
+} else {
+    println("below C - yikes")
+}
+
+~ Boolean operators
+var x=5
+var y=10
+
+if (x > 0 and y > 0) {
+    println("both positive")
+}
+
+if (x > 100 or y > 5) {
+    println("at least one is big enough")
+}
+
+if (not (x == 10)) {
+    println("x is not 10")
+}
+
+~ repeat loop
+println("counting 1 to 5:")
+repeat i=5 {
+    print(e"  $i")
+}
+println("")
+
+~ repeat accumulator
+var total=0 Integer
+repeat n=10 {
+    total += n
+}
+println(e"sum of 1..10 using repeat = $total")
+
+~ FizzBuzz
+println("FizzBuzz 1-15:")
+repeat i=15 {
+    if (i % 15 == 0) {
+        println("FizzBuzz")
+    } else if (i % 3 == 0) {
+        println("Fizz")
+    } else if (i % 5 == 0) {
+        println("Buzz")
+    } else {
+        println(i)
+    }
+}
+
+~ Range + map
+var squares=map(1..8, func sq(n) { return n ** 2 })
+println(e"squares of 1-8: $squares")
+
+~ try/catch - caught error
+try {
+    assert(False, "this assertion is supposed to fail")
+} catch(err) {
+    println(e"caught expected error: $err")
+}
+
+~ try/catch - no error
+try {
+    var ok=1 + 1
+    assert(ok == 2, "math broken")
+    println("no error thrown - good")
+} catch(e) {
+    println(e"unexpected catch: $e")
+}
+
+~ Nested if
+var a=True
+var b=False
+if (a and (not b)) {
+    if (a == True) {
+        println("nested if works")
+    }
+}

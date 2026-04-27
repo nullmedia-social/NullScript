@@ -1,0 +1,57 @@
+~ test_types.ns - variables, types, arrays, dicts
+
+~ Basic variable declarations
+var greeting="Hello" String Global
+const pi="3.14159" Type=String Scope=Function
+var count=0 Integer
+
+println(e"greeting = $greeting")
+println(e"pi = $pi")
+println(e"count = $count")
+
+~ Compound assignment
+count += 5
+count *= 2
+println(e"count after +=5 then *=2: $count")
+
+~ Arrays
+var myArray={"apple", "banana", "cherry"}
+println(e"array: $myArray")
+println(e"first element: ${myArray{1}}")
+println(e"array length: ${len(myArray)}")
+
+myArray{2} = "blueberry"
+println(e"after modifying index 2: $myArray")
+
+~ Dicts
+var person={name: "Alice", age: 30, city: "Wonderland"}
+println(e"person: $person")
+var nameKey="name"
+var ageKey="age"
+println(e"name: ${person{nameKey}}")
+println(e"age: ${person{ageKey}}")
+
+person{ageKey} = 31
+println(e"birthday! age is now ${person{ageKey}}")
+
+~ Ranges
+var nums=1..5
+println(e"range 1..5: $nums")
+
+~ Type checking
+println(e"type of greeting: ${type(greeting)}")
+println(e"type of myArray: ${type(myArray)}")
+println(e"type of person: ${type(person)}")
+println(e"type of True: ${type(True)}")
+println(e"type of Null: ${type(Null)}")
+
+~ Convert
+var numStr=convert(42, String)
+println(e"convert(42, String) = $numStr (type: ${type(numStr)})")
+var strNum=convert("123", Integer)
+println(e"convert(123, Integer) = $strNum (type: ${type(strNum)})")
+
+~ isNull
+var nothing=Null
+println(e"isNull(Null) = ${isNull(nothing)}")
+println(e"isNull(42)   = ${isNull(42)}")

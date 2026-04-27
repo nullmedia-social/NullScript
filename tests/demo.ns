@@ -1,0 +1,125 @@
+~~
+  demo.ns - a NullScript showcase
+  shows the language features working together
+~~
+
+~ 1. Variables and types
+var name="NullScript" String Global
+const version="0.1.0" Type=String Scope=Global
+println(e"Welcome to $name $version!")
+println("(the language that judges you)")
+println("")
+
+~ 2. Primes via filter + recursion
+func isPrime(n) {
+    if (n < 2) { return False }
+    var i=2 Integer
+    repeat check=n {
+        var divisor=check + 1
+        if (divisor >= n) { return True }
+        if (n % divisor == 0) { return False }
+    }
+    return True
+}
+
+println("Primes up to 30:")
+var primes=filter(1..30, isPrime)
+println(primes)
+println("")
+
+~ 3. Powers of 2
+println("Powers of 2 (1-10):")
+repeat i=10 {
+    println(e"  2^$i = ${2 ** i}")
+}
+println("")
+
+~ 4. FizzBuzz in one shot with map
+func fizzBuzz(n) {
+    if (n % 15 == 0) { return "FizzBuzz" }
+    if (n % 3 == 0)  { return "Fizz" }
+    if (n % 5 == 0)  { return "Buzz" }
+    return convert(n, String)
+}
+
+println("FizzBuzz 1-20:")
+var fb=map(1..20, fizzBuzz)
+println(join(fb, ", "))
+println("")
+
+~ 5. Safe divide with try/catch
+func safeDivide(a, b) {
+    try {
+        assert(b != 0, "cannot divide by zero")
+        return a / b
+    } catch(err) {
+        println(e"  [caught] $err")
+        return Null
+    }
+}
+
+println("Safe division:")
+println(e"  10 / 2 = ${safeDivide(10, 2)}")
+println(e"  7 / 0 = ${safeDivide(7, 0)}")
+println("")
+
+~ 6. String processing pipeline
+func countWords(s) {
+    var sp=" "
+    return len(split(s, sp))
+}
+func reverseWords(s) {
+    var sp=" "
+    var parts=split(s, sp)
+    reverse(parts)
+    return join(parts, sp)
+}
+
+var sentence="the quick brown fox jumps over the lazy dog"
+println(e"Original:  $sentence")
+println(e"Words:     ${countWords(sentence)}")
+println(e"Reversed:  ${reverseWords(sentence)}")
+var fox="fox"
+println(e"Contains fox: ${contains(sentence, fox)}")
+println("")
+
+~ 7. Reduce to build sum and product
+var range16=1..6
+var sumTotal=reduce(range16, func addFn(a, b) { return a + b }, 0)
+var product=reduce(range16, func mulFn(a, b) { return a * b }, 1)
+println(e"1..6 sum = $sumTotal, product = $product")
+println("")
+
+~ 8. Dict as record
+var person={name: "Ada Lovelace", born: 1815, field: "Computing"}
+println("Person record:")
+var kList=keys(person)
+repeat ki=len(kList) {
+    var k=kList{ki}
+    println(e"  $k: ${person{k}}")
+}
+println("")
+
+~ 9. Closures / counter factory
+func makeCounter(start) {
+    var n=start Integer
+    func next() {
+        n += 1
+        return n
+    }
+    return next
+}
+
+var counter=makeCounter(0)
+println(e"Counter: ${counter()}, ${counter()}, ${counter()}, ${counter()}, ${counter()}")
+println("")
+
+~ 10. Aliases
+alias println say
+alias func define
+
+define greet(who) {
+    say(e"Hey $who! NullScript says hi.")
+}
+
+greet("world")

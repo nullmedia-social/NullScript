@@ -1,0 +1,13 @@
+~ test_hello.ns     hello world and basic output
+
+println("Hello, World!")
+println(e"NullScript says: ${"hi" + " there"}")
+
+~ make sure print (no newline) works
+print("no newline here -> ")
+print("yep")
+println("")
+
+~ warn and err types
+println("this is a warning", "warn")
+println("this is an error", "err")

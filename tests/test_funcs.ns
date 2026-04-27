@@ -1,0 +1,68 @@
+~ test_funcs.ns - functions, closures, named args, recursion
+
+~ Basic function
+func greet(name, greeting) {
+    println(e"$greeting, $name!")
+}
+
+greet("World", "Hello")
+greet(greeting="Howdy", name="partner")
+
+~ Return values
+func add(a, b) {
+    return a + b
+}
+
+println(e"add(3, 4) = ${add(3, 4)}")
+println(e"add named a=10 b=20 = ${add(a=10, b=20)}")
+
+~ Recursion
+func factorial(n) {
+    if (n <= 1) {
+        return 1
+    }
+    return n * factorial(n - 1)
+}
+
+println(e"5! = ${factorial(5)}")
+println(e"10! = ${factorial(10)}")
+
+~ Higher-order functions
+func apply(fn, value) {
+    return fn(value)
+}
+
+func double(x) { return x * 2 }
+func square(x) { return x ** 2 }
+
+println(e"apply(double, 5) = ${apply(double, 5)}")
+println(e"apply(square, 5) = ${apply(square, 5)}")
+
+~ Alias
+alias func fn
+alias println log
+
+fn sayHi(who) {
+    log(e"Hi $who from an aliased func!")
+}
+
+sayHi("you")
+
+~ Fibonacci
+func fib(n) {
+    if (n <= 1) { return n }
+    return fib(n - 1) + fib(n - 2)
+}
+
+println(e"fib(10) = ${fib(10)}")
+
+~ Default-ish params via isNull check
+func greetWithDefault(name, greeting) {
+    if (isNull(greeting)) {
+        greeting = "Hello"
+    }
+    println(e"$greeting, $name!")
+}
+
+greetWithDefault("World", Null)
+greetWithDefault("Alice", "Hey")

@@ -1,0 +1,8 @@
+Package: nullscript
+Version: 0.1.0
+Section: interpreters
+Priority: optional
+Architecture: arm64
+Maintainer: KingNullboy <kingnullboy@proton.me>
+Description: NullScript programming language interpreter
+ A dynamically-typed scripting language that judges you.

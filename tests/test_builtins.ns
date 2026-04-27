@@ -1,0 +1,116 @@
+~ test_builtins.ns - builtin functions
+
+~ String functions
+var str="Hello NullScript World"
+var needle="NullScript"
+var repl="Wonderful"
+var hello="Hello"
+var world="World"
+var space=" "
+var dash="-"
+var empty=""
+var nl_str="\n"
+
+println(e"length: ${len(str)}")
+println(e"contains NullScript: ${contains(str, needle)}")
+println(e"startsWith Hello: ${startsWith(str, hello)}")
+println(e"endsWith World: ${endsWith(str, world)}")
+println(e"replace: ${replace(str, needle, repl)}")
+println(e"charsFrom(7,16): ${charsFrom(str, 7, 16)}")
+println(e"index of NullScript: ${index(str, needle)}")
+
+var words=split(str, space)
+println(e"split by space: $words")
+println(e"joined with dash: ${join(words, dash)}")
+
+~ Array functions
+var nums={5, 3, 8, 1, 9, 2, 7, 4, 6}
+println(e"original: $nums")
+sort(nums)
+println(e"sorted: $nums")
+reverse(nums)
+println(e"reversed: $nums")
+push(nums, 10)
+println(e"after push(10): $nums")
+var popped=pop(nums)
+println(e"popped: $popped")
+var merged=merge({1, 2, 3}, {4, 5, 6})
+println(e"merged: $merged")
+println(e"contains 5: ${contains(nums, 5)}")
+
+~ map / filter / reduce
+var doubled=map({1, 2, 3, 4, 5}, func dbl(x) { return x * 2 })
+println(e"doubled: $doubled")
+var evens=filter({1, 2, 3, 4, 5, 6, 7, 8}, func isEven(x) { return x % 2 == 0 })
+println(e"evens: $evens")
+var total=reduce({1, 2, 3, 4, 5}, func addUp(a, b) { return a + b }, 0)
+println(e"sum via reduce: $total")
+
+~ Math
+println(e"abs(-42)    = ${Math.abs(-42)}")
+println(e"sqrt(144)   = ${Math.sqrt(144)}")
+println(e"floor(3.9)  = ${Math.floor(3.9)}")
+println(e"ceil(3.1)   = ${Math.ceil(3.1)}")
+println(e"round(3.5)  = ${Math.round(3.5)}")
+println(e"min(10, 3)  = ${Math.min(10, 3)}")
+println(e"max(10, 3)  = ${Math.max(10, 3)}")
+println(e"2 ** 10     = ${2 ** 10}")
+
+~ isNull / type
+var nothing=Null
+println(e"isNull(Null) = ${isNull(nothing)}")
+println(e"isNull(42)   = ${isNull(42)}")
+println(e"type(True)   = ${type(True)}")
+
+~ Dict functions
+var d={a: 1, b: 2, c: 3}
+println(e"keys:   ${keys(d)}")
+println(e"values: ${values(d)}")
+var bk="b"
+var zk="z"
+println(e"hasKey b: ${hasKey(d, bk)}")
+println(e"hasKey z: ${hasKey(d, zk)}")
+
+~ forEach
+println("forEach items:")
+{10, 20, 30}.forEach(func printIt(x) {
+    println(e"  -> $x")
+})
+
+~ time
+var ts=time(False)
+println(e"unix timestamp type: ${type(ts)}")
+
+~ random
+var r=random(1, 100, "Integer")
+println(e"random 1-100 in range: ${r >= 1 and r <= 100}")
+assert(r >= 1 and r <= 100, "random out of range!")
+
+~ assert passes
+assert(1 + 1 == 2, "basic math is broken")
+assert(len("hello") == 5, "string length broken")
+assert(contains({1, 2, 3}, 2), "array contains broken")
+println("all assertions passed")
+
+~ shell
+var out=shell("echo shell_works")
+println(e"shell: ${replace(out, nl_str, empty)}")
+
+~ convert round-trips
+var cn=convert("42", Integer)
+var cs=convert(cn, String)
+assert(cn == 42, "convert to int failed")
+assert(cs == "42", "convert to string failed")
+println("convert round-trip passed")
+
+~ startsWith / endsWith
+assert(startsWith(str, hello), "startsWith failed")
+assert(endsWith(str, world), "endsWith failed")
+println("startsWith/endsWith passed")
+
+~ insert / remove
+var arr={1, 2, 3, 4, 5}
+insert(arr, 99, 3)
+println(e"after insert 99 at 3: $arr")
+remove(arr, 3)
+println(e"after remove at 3: $arr")
