@@ -1,14 +1,76 @@
-Permission is granted to use, copy, modify, and distribute this software for personal, educational, hobby, research, and nonprofit purposes.
+NULLSCRIPT LICENSE
 
-Commercial use is prohibited without written permission from the copyright holder.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use,
+copy, modify, and distribute the Software for personal, educational, hobby,
+research, and nonprofit purposes.
 
-Commercial use includes:
-- selling this software or modified versions
-- bundling it with paid products or services
-- offering paid hosting or SaaS based on it
-- using it primarily to generate business revenue
-- paid support or licensing resale tied to it
+Commercial use of software built with NullScript is permitted, provided that
+NullScript itself is not used as a paid execution service.
 
-Redistributions must include this license and original attribution.
+---
 
-This software is provided as-is, without warranty.
+PROHIBITED USES
+
+The following uses are not permitted:
+
+- Providing NullScript as a hosted execution service (including web apps, APIs,
+  SaaS platforms, or cloud-based runners)
+- Charging users for access to NullScript execution (including subscriptions,
+  pay-per-run, API fees, or similar monetization models)
+- Operating any service where the primary function is executing NullScript code
+  submitted by users on infrastructure controlled by a third party
+- Misrepresenting NullScript-based systems as something they are not (e.g.,
+  labeling deterministic script execution systems as “AI” when they are not)
+
+---
+
+ALLOWED USES
+
+The following uses are explicitly permitted:
+
+- Running NullScript locally on any machine under user control
+- Using VPS, cloud servers, containers, or remote environments to run NullScript,
+  provided execution remains user-controlled and not sold as a service
+- Using NullScript in general-purpose hosting platforms where it is only one
+  tool among many
+- Building and selling software created with NullScript (games, applications,
+  tools, services), including monetization via sales, subscriptions, or ads
+- Developing IDEs, editors, debuggers, and other developer tools that improve
+  the NullScript experience
+- Educational content, tutorials, and videos, including monetized content on
+  third-party platforms (e.g., YouTube, Vimeo), provided they do not form a
+  paid execution service for NullScript
+- Sponsorships and advertising within educational content, provided they are
+  reasonable and not designed as exploitative ad-extraction systems
+
+---
+
+ATTRIBUTION
+
+Redistributions of the Software or substantial portions thereof must include
+this license and appropriate attribution to the original NullScript project.
+
+Attribution is encouraged for software built using NullScript where practical,
+but is not required if the software is fully open-source or attribution is
+already clearly visible in source materials.
+
+---
+
+EXECUTION PRINCIPLE
+
+NullScript is intended to remain a locally-executable programming language.
+
+It must always be possible for users to execute NullScript without requiring
+payment, subscription, or remote authorization.
+
+NullScript shall not be used as a hosted runtime product, API service, or
+cloud execution platform.
+
+---
+
+DISCLAIMER
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
