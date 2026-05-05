@@ -1,12 +1,12 @@
-NULLSCRIPT LICENSE
+NULL OPEN NONCOMMERCIAL LICENSE
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to use,
 copy, modify, and distribute the Software for personal, educational, hobby,
 research, and nonprofit purposes.
 
-Commercial use of software built with NullScript is permitted, provided that
-NullScript itself is not used as a paid execution service.
+Commercial use of software built with the Software is permitted, provided that
+the Software itself is not used as a paid execution service.
 
 ---
 
@@ -14,14 +14,14 @@ PROHIBITED USES
 
 The following uses are not permitted:
 
-- Providing NullScript as a hosted execution service (including web apps, APIs,
+- Providing the Software as a hosted execution service (including web apps, APIs,
   SaaS platforms, or cloud-based runners)
-- Charging users for access to NullScript execution (including subscriptions,
+- Charging users for access to execution of the Software (including subscriptions,
   pay-per-run, API fees, or similar monetization models)
-- Operating any service where the primary function is executing NullScript code
-  submitted by users on infrastructure controlled by a third party
-- Misrepresenting NullScript-based systems as something they are not (e.g.,
-  labeling deterministic script execution systems as “AI” when they are not)
+- Operating any service where the primary function is executing code submitted by
+  users on infrastructure controlled by a third party using the Software
+- Misrepresenting systems built with the Software as something they are not
+  (e.g., labeling deterministic or rule-based systems as “AI” when they are not)
 
 ---
 
@@ -29,18 +29,17 @@ ALLOWED USES
 
 The following uses are explicitly permitted:
 
-- Running NullScript locally on any machine under user control
-- Using VPS, cloud servers, containers, or remote environments to run NullScript,
+- Running the Software locally on any machine under user control
+- Using VPS, cloud servers, containers, or remote environments to run the Software,
   provided execution remains user-controlled and not sold as a service
-- Using NullScript in general-purpose hosting platforms where it is only one
-  tool among many
-- Building and selling software created with NullScript (games, applications,
+- Using the Software in general-purpose hosting platforms where it is only one tool
+  among many
+- Building and selling software created with the Software (games, applications,
   tools, services), including monetization via sales, subscriptions, or ads
-- Developing IDEs, editors, debuggers, and other developer tools that improve
-  the NullScript experience
+- Developing IDEs, editors, debuggers, and other developer tools that improve the
+  Software experience
 - Educational content, tutorials, and videos, including monetized content on
-  third-party platforms (e.g., YouTube, Vimeo), provided they do not form a
-  paid execution service for NullScript
+  third-party platforms, provided they do not form a paid execution service
 - Sponsorships and advertising within educational content, provided they are
   reasonable and not designed as exploitative ad-extraction systems
 
@@ -49,9 +48,9 @@ The following uses are explicitly permitted:
 ATTRIBUTION
 
 Redistributions of the Software or substantial portions thereof must include
-this license and appropriate attribution to the original NullScript project.
+this license and appropriate attribution to the original project.
 
-Attribution is encouraged for software built using NullScript where practical,
+Attribution is encouraged for software built using the Software where practical,
 but is not required if the software is fully open-source or attribution is
 already clearly visible in source materials.
 
@@ -59,12 +58,12 @@ already clearly visible in source materials.
 
 EXECUTION PRINCIPLE
 
-NullScript is intended to remain a locally-executable programming language.
+The Software is intended to remain locally executable.
 
-It must always be possible for users to execute NullScript without requiring
+It must always be possible for users to execute the Software without requiring
 payment, subscription, or remote authorization.
 
-NullScript shall not be used as a hosted runtime product, API service, or
+The Software shall not be used as a hosted runtime product, API service, or
 cloud execution platform.
 
 ---
